@@ -15,72 +15,187 @@ public class Main {
     // Map from alphabet to base
     private final Map<Character, String> mMapAB = new HashMap<Character, String>() {
         {
-            put('a', "...");
-            put('b', "..'");
-            put('c', "..:");
-            put('d', ".'.");
-            put('e', ".''");
-            put('f', ".':");
-            put('g', ".:.");
-            put('h', ".:'");
-            put('i', ".::");
-            put('j', "'..");
-            put('k', "'.'");
-            put('l', "'.:");
-            put('m', "''.");
-            put('n', "'''");
-            put('o', "'':");
-            put('p', "':.");
-            put('q', "':'");
-            put('r', "'::");
-            put('s', ":..");
-            put('t', ":.'");
-            put('u', ":.:");
-            put('v', ":'.");
-            put('w', ":''");
-            put('x', ":':");
-            put('y', "::.");
-            put('z', "::'");
-            put(' ', ":::");
+            put('a', "....");
+            put('b', "...'");
+            put('c', "...:");
+            put('d', "..'.");
+            put('e', "..''");
+            put('f', "..':");
+            put('g', "..:.");
+            put('h', "..:'");
+            put('i', "..::");
+            put('j', ".'..");
+            put('k', ".'.'");
+            put('l', ".'.:");
+            put('m', ".''.");
+            put('n', ".'''");
+            put('o', ".'':");
+            put('p', ".':.");
+            put('q', ".':'");
+            put('r', ".'::");
+            put('s', ".:..");
+            put('t', ".:.'");
+            put('u', ".:.:");
+            put('v', ".:'.");
+            put('w', ".:''");
+            put('x', ".:':");
+            put('y', ".::.");
+            put('z', ".::'");
+            put(' ', ".:::");
+
+            put('A', "'...");
+            put('B', "'..'");
+            put('C', "'..:");
+            put('D', "'.'.");
+            put('E', "'.''");
+            put('F', "'.':");
+            put('G', "'.:.");
+            put('H', "'.:'");
+            put('I', "'.::");
+            put('J', "''..");
+            put('K', "''.'");
+            put('L', "''.:");
+            put('M', "'''.");
+            put('N', "''''");
+            put('O', "''':");
+            put('P', "'':.");
+            put('Q', "'':'");
+            put('R', "''::");
+            put('S', "':..");
+            put('T', "':.'");
+            put('U', "':.:");
+            put('V', "':'.");
+            put('W', "':''");
+            put('X', "':':");
+            put('Y', "'::.");
+            put('Z', "'::'");
+            put('_', "':::");
+
+            put('0', ":...");
+            put('1', ":..'");
+            put('2', ":..:");
+            put('3', ":.'.");
+            put('4', ":.''");
+            put('5', ":.':");
+            put('6', ":.:.");
+            put('7', ":.:'");
+            put('8', ":.::");
+            put('9', ":'..");
+            put(',', ":'.'");
+            put('.', ":'.:");
+            put('?', ":''.");
+            put('!', ":'''");
+            put('@', ":'':");
+            put(':', ":':.");
+            put('|', ":':'");
+            put('\\', ":'::");
+            put('\'', "::..");
+            put(':', "::.'");
+            put(';', "::.:");
+            put('"', "::'.");
+            put('/', "::''");
+            put('-', "::':");
+            put('=', ":::.");
+            put('+', ":::'");
+            put('*', "::::");
         }
     };
 
     // Map from base to alphabet
     private final Map<String, Character> mMapBA = new HashMap<String, Character>() {
         {
-            put("...", 'a');
-            put("..'", 'b');
-            put("..:", 'c');
-            put(".'.", 'd');
-            put(".''", 'e');
-            put(".':", 'f');
-            put(".:.", 'g');
-            put(".:'", 'h');
-            put(".::", 'i');
-            put("'..", 'j');
-            put("'.'", 'k');
-            put("'.:", 'l');
-            put("''.", 'm');
-            put("'''", 'n');
-            put("'':", 'o');
-            put("':.", 'p');
-            put("':'", 'q');
-            put("'::", 'r');
-            put(":..", 's');
-            put(":.'", 't');
-            put(":.:", 'u');
-            put(":'.", 'v');
-            put(":''", 'w');
-            put(":':", 'x');
-            put("::.", 'y');
-            put("::'", 'z');
-            put(":::", ' ');
+            put("....", 'a');
+            put("...'", 'b');
+            put("...:", 'c');
+            put("..'.", 'd');
+            put("..''", 'e');
+            put("..':", 'f');
+            put("..:.", 'g');
+            put("..:'", 'h');
+            put("..::", 'i');
+            put(".'..", 'j');
+            put(".'.'", 'k');
+            put(".'.:", 'l');
+            put(".''.", 'm');
+            put(".'''", 'n');
+            put(".'':", 'o');
+            put(".':.", 'p');
+            put(".':'", 'q');
+            put(".'::", 'r');
+            put(".:..", 's');
+            put(".:.'", 't');
+            put(".:.:", 'u');
+            put(".:'.", 'v');
+            put(".:''", 'w');
+            put(".:':", 'x');
+            put(".::.", 'y');
+            put(".::'", 'z');
+            put(".:::", ' ');
+
+            put("'...", 'A');
+            put("'..'", 'B');
+            put("'..:", 'C');
+            put("'.'.", 'D');
+            put("'.''", 'E');
+            put("'.':", 'F');
+            put("'.:.", 'G');
+            put("'.:'", 'H');
+            put("'.::", 'I');
+            put("''..", 'J');
+            put("''.'", 'K');
+            put("''.:", 'L');
+            put("'''.", 'M');
+            put("''''", 'N');
+            put("''':", 'O');
+            put("'':.", 'P');
+            put("'':'", 'Q');
+            put("''::", 'R');
+            put("':..", 'S');
+            put("':.'", 'T');
+            put("':.:", 'U');
+            put("':'.", 'V');
+            put("':''", 'W');
+            put("':':", 'X');
+            put("'::.", 'Y');
+            put("'::'", 'Z');
+            put("':::", '_');
+
+            put(":...", '0');
+            put(":..'", '1');
+            put(":..:", '2');
+            put(":.'.", '3');
+            put(":.''", '4');
+            put(":.':", '5');
+            put(":.:.", '6');
+            put(":.:'", '7');
+            put(":.::", '8');
+            put(":'..", '9');
+            put(":'.'", ',');
+            put(":'.:", '.');
+            put(":''.", '?');
+            put(":'''", '!');
+            put(":'':", '@');
+            put(":':.", ':');
+            put(":':'", '|');
+            put(":'::", '\\');
+            put("::..", '\'');
+            put("::.'", ':');
+            put("::.:", ';');
+            put("::'.", '"');
+            put("::''", '/');
+            put("::':", '-');
+            put(":::.", '=');
+            put(":::'", '+');
+            put("::::", '*');
         }
     };
 
     private final char[] VALID_CHARS_ALPHABET = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '};
-    private final char[] VALID_CHARS_BASE_3 = {'.', '\'', ':', ' '};
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+            'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '_', '0',
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '.', '?', '!', '@', ':', '|', '\\', '\'', ':', ';',
+            '"', '/', '-', '=', '+', '*',};
+    private final char[] VALID_CHARS_BASE_3 = {'.', '\'', ':'};
 
     private boolean[] isValid;
     private boolean isAlphabet = true;
@@ -96,11 +211,6 @@ public class Main {
         while (true) {
             System.out.println("Input please: ");
             char[] inputChars = mScanner.nextLine().toCharArray();
-            for (int i = 0; i < inputChars.length; i++) {
-                if(Character.isLetter(inputChars[i]) && Character.isUpperCase(inputChars[i])){
-                    inputChars[i] = Character.toLowerCase(inputChars[i]);
-                }
-            }
 
             isAlphabet = true;
             isBase3 = true;
@@ -131,22 +241,23 @@ public class Main {
 
             if (isAlphabet || isBase3) {
                 mBuilder.replace(0, mBuilder.length(), "");
-                if (isAlphabet) {
-                    for (char c : inputChars) {
-                        mBuilder.append(mMapAB.get(c));
-                    }
-                    System.out.println("Output: " + mBuilder.toString());
-                } else if (isBase3) {
+                // VALID_CHARS_BASE_3 is subset of VALID_CHARS_ALPHABET
+                if (isBase3) {
                     mSmallBuilder.replace(0, mSmallBuilder.length(), "");
                     int count = 0;
                     for (char c : inputChars) {
                         count++;
                         mSmallBuilder.append(c);
-                        if (count == 3) {
+                        if (count == 4) {
                             mBuilder.append(mMapBA.get(mSmallBuilder.toString()));
                             mSmallBuilder.replace(0, mSmallBuilder.length(), "");
                             count = 0;
                         }
+                    }
+                    System.out.println("Output: " + mBuilder.toString());
+                } else if (isAlphabet) {
+                    for (char c : inputChars) {
+                        mBuilder.append(mMapAB.get(c));
                     }
                     System.out.println("Output: " + mBuilder.toString());
                 }
