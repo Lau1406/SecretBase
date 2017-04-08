@@ -96,6 +96,11 @@ public class Main {
         while (true) {
             System.out.println("Input please: ");
             char[] inputChars = mScanner.nextLine().toCharArray();
+            for (int i = 0; i < inputChars.length; i++) {
+                if(Character.isLetter(inputChars[i]) && Character.isUpperCase(inputChars[i])){
+                    inputChars[i] = Character.toLowerCase(inputChars[i]);
+                }
+            }
 
             isAlphabet = true;
             isBase3 = true;
