@@ -254,13 +254,12 @@ public class Main {
                             count = 0;
                         }
                     }
-                    System.out.println("Output: " + mBuilder.toString());
                 } else if (isAlphabet) {
                     for (char c : inputChars) {
                         mBuilder.append(mMapAB.get(c));
                     }
-                    System.out.println("Output: " + mBuilder.toString());
                 }
+                System.out.println("Output: " + mBuilder.toString());
             } else {
                 System.out.println("Not alphabet or base 3!");
             }
