@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -208,6 +211,7 @@ public class Main {
     private Scanner mScanner;
     private StringBuilder mBuilder = new StringBuilder();
     private StringBuilder mSmallBuilder = new StringBuilder();
+    private StringSelection mStringSelection;
 
     public Main() {
         mScanner = new Scanner(System.in);
@@ -279,6 +283,12 @@ public class Main {
                     }
                 }
                 System.out.println("Output: " + mBuilder.toString());
+
+                mStringSelection = new StringSelection(mBuilder.toString());
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(mStringSelection, mStringSelection);
+
+                System.out.println("Copied to clipboard");
             } else {
                 System.out.println("Not alphabet or base 3!");
             }
