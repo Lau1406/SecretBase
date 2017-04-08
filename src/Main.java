@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -201,6 +202,9 @@ public class Main {
     private boolean isAlphabet = true;
     private boolean isBase3 = true;
 
+    private final int AMOUNT_CHARACTERS = 4;
+    private final int BASE = 3;
+
     private Scanner mScanner;
     private StringBuilder mBuilder = new StringBuilder();
     private StringBuilder mSmallBuilder = new StringBuilder();
@@ -248,7 +252,7 @@ public class Main {
                     for (char c : inputChars) {
                         count++;
                         mSmallBuilder.append(c);
-                        if (count == 4) {
+                        if (count == AMOUNT_CHARACTERS) {
                             mBuilder.append(mMapBA.get(mSmallBuilder.toString()));
                             mSmallBuilder.replace(0, mSmallBuilder.length(), "");
                             count = 0;
@@ -257,6 +261,21 @@ public class Main {
                 } else if (isAlphabet) {
                     for (char c : inputChars) {
                         mBuilder.append(mMapAB.get(c));
+                    }
+                    Random random = new Random();
+                    int amount = random.nextInt(AMOUNT_CHARACTERS);
+                    for (int i = 0; i < amount; i++) {
+                        switch (random.nextInt(BASE)) {
+                            case 0:
+                                mBuilder.append(".");
+                                break;
+                            case 1:
+                                mBuilder.append("'");
+                                break;
+                            case 2:
+                                mBuilder.append(":");
+                                break;
+                        }
                     }
                 }
                 System.out.println("Output: " + mBuilder.toString());
