@@ -41,7 +41,7 @@ public class Main {
             put('x', ":':");
             put('y', "::.");
             put('z', "::'");
-            put(' ', " ");
+            put(' ', ":::");
         }
     };
 
@@ -74,7 +74,7 @@ public class Main {
             put(":':", 'x');
             put("::.", 'y');
             put("::'", 'z');
-            put(" ", ' ');
+            put(":::", ' ');
         }
     };
 
@@ -135,16 +135,12 @@ public class Main {
                     mSmallBuilder.replace(0, mSmallBuilder.length(), "");
                     int count = 0;
                     for (char c : inputChars) {
-                        if (c == ' ') {
-                            mBuilder.append(mMapBA.get(" "));
-                        } else {
-                            count++;
-                            mSmallBuilder.append(c);
-                            if (count == 3) {
-                                mBuilder.append(mMapBA.get(mSmallBuilder.toString()));
-                                mSmallBuilder.replace(0, mSmallBuilder.length(), "");
-                                count = 0;
-                            }
+                        count++;
+                        mSmallBuilder.append(c);
+                        if (count == 3) {
+                            mBuilder.append(mMapBA.get(mSmallBuilder.toString()));
+                            mSmallBuilder.replace(0, mSmallBuilder.length(), "");
+                            count = 0;
                         }
                     }
                     System.out.println("Output: " + mBuilder.toString());
